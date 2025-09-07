@@ -1,0 +1,6 @@
+# Compilation
+bin/
+
+# IDE
+.classpath
+.settings/
