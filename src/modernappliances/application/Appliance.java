@@ -71,10 +71,12 @@ public abstract class Appliance {
 
 	// Methods
 	/**
+	 * Returns a string with all the appliance's attributes.
 	 * Implemented so it can be overridden by sub-classes.
 	 * Sub-classes will concatenate their specific toString outputs to this super-class one.
 	 * @author mr-bones
 	 * @version 08-09-2025
+	 * @return formatted string with appliance attributes
 	 */
 	@Override
 	public String toString() {
