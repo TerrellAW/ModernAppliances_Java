@@ -10,7 +10,8 @@ public class Refrigerator extends Appliance {
 		super(); // Call from super-class
 	}
 
-	@Override public String toString() {
+	@Override
+	public String toString() {
 		return "";
 	}
 	
