@@ -3,7 +3,7 @@ package modernappliances.application;
 /**
  * Abstract Appliance super-class that is extended by the specific appliance types of Modern Appliances.
  * @author mr-bones
- * @version 08-09-2025
+ * @version 09-09-2025
  */
 public abstract class Appliance {
 	
@@ -65,8 +65,13 @@ public abstract class Appliance {
 	}
 
 	// Constructor
-	public Appliance() {
-		
+	public Appliance(int itemNumber, String brand, int quantity, int wattage, String color, double price) {
+		this.itemNumber = itemNumber;
+		this.brand = brand;
+		this.quantity = quantity;
+		this.wattage = wattage;
+		this.color = color;
+		this.price = price;
 	}
 
 	// Methods
