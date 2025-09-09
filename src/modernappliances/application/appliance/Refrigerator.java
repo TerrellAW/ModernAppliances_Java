@@ -1,6 +1,6 @@
 package modernappliances.application.appliance;
 
-import modernappliances.application.enumerator.Doors;
+import modernappliances.application.enumerator.Door;
 
 /**
  * Refrigerator class extends Appliance and implements its own unique attributes and methods.
@@ -10,16 +10,16 @@ import modernappliances.application.enumerator.Doors;
 public class Refrigerator extends Appliance {
 	
 	// Attributes
-	private Doors doorAmount;
+	private Door doorAmount;
 	private int height;
 	private int width;
 	
 	// Getters and Setters
-	public Doors getDoorAmount() {
+	public Door getDoorAmount() {
 		return doorAmount;
 	}
 
-	public void setDoorAmount(Doors doorAmount) {
+	public void setDoorAmount(Door doorAmount) {
 		this.doorAmount = doorAmount;
 	}
 
@@ -40,7 +40,7 @@ public class Refrigerator extends Appliance {
 	}
 
 	// Constructor
-	public Refrigerator(int itemNumber, String brand, int quantity, int wattage, String color, double price, Doors doorAmount, int height, int width) {
+	public Refrigerator(int itemNumber, String brand, int quantity, int wattage, String color, double price, Door doorAmount, int height, int width) {
 		super(itemNumber, brand, quantity, wattage, color, price); // Call from super-class
 		this.doorAmount = doorAmount;
 		this.height = height;

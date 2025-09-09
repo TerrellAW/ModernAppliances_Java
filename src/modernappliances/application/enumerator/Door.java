@@ -5,7 +5,7 @@ package modernappliances.application.enumerator;
  * @author mr-bones
  * @version 09-09-2025
  */
-public enum Doors {
+public enum Door {
 	// Values
 	TWO("Two", 2),
 	THREE("Three", 3),
@@ -33,7 +33,7 @@ public enum Doors {
 	}
 
 	// Constructor
-	private Doors(String numStr, int num) {
+	private Door(String numStr, int num) {
 		this.setNumStr(numStr);
 		this.setNum(num);
 	}
