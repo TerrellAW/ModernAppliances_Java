@@ -1,7 +1,7 @@
 package modernappliances.application;
 
 /**
- * Enumerates number of doors in a key value pair for the Refrigerator class
+ * Enumerates the valid number of doors in key value pairs for the Refrigerator class
  * @author mr-bones
  * @version 09-09-2025
  */
