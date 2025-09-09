@@ -1,4 +1,4 @@
-package modernappliances.application;
+package modernappliances.application.appliance;
 
 /**
  * Abstract Appliance super-class that is extended by the specific appliance types of Modern Appliances.

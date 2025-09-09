@@ -1,4 +1,4 @@
-package modernappliances.application;
+package modernappliances.application.enumerator;
 
 /**
  * Enumerates the valid sound ratings for the Dishwasher class

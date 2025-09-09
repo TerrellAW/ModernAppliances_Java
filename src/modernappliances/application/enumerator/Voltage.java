@@ -1,4 +1,4 @@
-package modernappliances.application;
+package modernappliances.application.enumerator;
 
 /**
  * Enumerates the valid battery voltages in key value pairs for the Vacuum class

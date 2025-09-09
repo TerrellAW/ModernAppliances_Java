@@ -1,4 +1,6 @@
-package modernappliances.application;
+package modernappliances.application.appliance;
+
+import modernappliances.application.enumerator.Room;
 
 /**
  * Microwave class extends Appliance and implements its own unique attributes and methods.

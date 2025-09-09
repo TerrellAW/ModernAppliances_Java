@@ -1,4 +1,4 @@
-package modernappliances.application;
+package modernappliances.application.enumerator;
 
 /**
  * Enumerates the valid room types for the Microwave class
