@@ -20,11 +20,11 @@ public class AppDriver {
 	 */
 	public static void main(String[] args) {
 		// Initialization
-		System.out.println("Loading...");
-		// Read and parse appliance data here
+		boolean running = true;
+		// Load and parse data
 		
-		// Refresh console
-		System.out.println("\033[H\033[2J");
+		// Initialize scanner for user input
+		Scanner input = new Scanner(System.in);
 		
 		// Main menu
 		/**
@@ -33,7 +33,7 @@ public class AppDriver {
 		 * @author mr-bones
 		 * @version 10-09-2025
 		 */
-		while (true) {
+		while (running) {
 			System.out.println(
 					"Welcome to Modern Appliances!\n"
 							+ "How may we assist you?\n"
@@ -43,43 +43,36 @@ public class AppDriver {
 							+ "4 - Produce random appliance list\n"
 							+ "5 - Save & exit");
 			
-			// Initialize scanner for user input
-			Scanner input = new Scanner(System.in);
-			// Take first char from input
-			String option = input.next();
+			// Take user input
+			String option = input.nextLine();
 			
 			// Input validation
 			switch (option) {
 			case "1":
-				// Close scanner and call chosen function
-				input.close();
 				break;
 			case "2":
-				// Close scanner and call chosen function
-				input.close();
 				break;
 			case "3":
-				// Close scanner and call chosen function
-				input.close();
 				break;
 			case "4":
-				// Close scanner and call chosen function
-				input.close();
 				break;
 			case "5":
-				// Close scanner and call chosen function
-				input.close();
+				// Save data
+				
 				// End main program loop
-				return;
+				running = false;
+				break;
 			default:
 				// Notify user of incorrect input and try again
 				System.out.println("Invalid option. Try again.");
 				break;
 			}
 			
-			// Close scanner
-			input.close();
 		}
+		
+		// Close scanner and end program
+		input.close();
+		return;
 	}
 	
 	
