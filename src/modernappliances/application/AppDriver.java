@@ -1,5 +1,11 @@
 package modernappliances.application;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Scanner;
 
 import modernappliances.application.appliance.*;
@@ -22,6 +28,8 @@ public class AppDriver {
 		// Initialization
 		boolean running = true;
 		// Load and parse data
+		List<String> applianceData = ReadData();
+		List<List<Appliance>> appliances = ParseApplianceData(applianceData);
 		
 		// Initialize scanner for user input
 		Scanner input = new Scanner(System.in);
@@ -75,6 +83,38 @@ public class AppDriver {
 		return;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
+	private static List<String> ReadData() {
+		// Relative file path
+		String filePath = "/res/appliances.txt";
+		
+		// Find and open resource
+		try (InputStream inputStream = AppDriver.class.getResourceAsStream(filePath);
+			 BufferedReader reader = new BufferedReader(
+		     new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+			
+			StringBuilder content = new StringBuilder();
+			String line;
+			while ((line = reader.readLine()) != null) {
+				content.append(line).append(System.lineSeparator());
+			}
+			String result = content.toString();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
+	/**
+	 * 
+	 * @return
+	 */
+	private static List<List<Appliance>> ParseApplianceData(List<String> applianceData) {
+		
+	}
 	
 }
