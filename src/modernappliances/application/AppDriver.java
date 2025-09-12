@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -84,29 +85,36 @@ public class AppDriver {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Method for reading data from the appliances.txt resource file.
+	 * Will read line by line and add these lines as strings to a list of strings.
+	 * Each line contains information on a single appliance.
+	 * @author mr-bones
+	 * @version 11-09-2025
+	 * @return list of strings, each string is one appliance
 	 */
 	private static List<String> ReadData() {
 		// Relative file path
 		String filePath = "/res/appliances.txt";
+		
+		// Initialize data list
+		List<String> rawData = new ArrayList<>();
 		
 		// Find and open resource
 		try (InputStream inputStream = AppDriver.class.getResourceAsStream(filePath);
 			 BufferedReader reader = new BufferedReader(
 		     new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
 			
-			StringBuilder content = new StringBuilder();
 			String line;
 			while ((line = reader.readLine()) != null) {
-				content.append(line).append(System.lineSeparator());
+				rawData.add(line); // Add each line to list of lines
 			}
-			String result = content.toString();
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			// Auto-generated error handler
 			e.printStackTrace();
 		}
+		
+		return rawData;
 	}
 	
 	/**
