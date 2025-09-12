@@ -14,7 +14,7 @@ import modernappliances.application.appliance.*;
 /**
  * Main driver class of the program. Contains the entry point.
  * @author mr-bones
- * @version 10-09-2025
+ * @version 11-09-2025
  */
 public class AppDriver {
 	
@@ -118,11 +118,27 @@ public class AppDriver {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * This method parses the list of strings from ReadData() into a list of Appliance objects.
+	 * @author mr-bones
+	 * @version 11-09-2025
+	 * @return nested generic collection of Appliance objects
 	 */
 	private static List<List<Appliance>> ParseApplianceData(List<String> applianceData) {
+		// Initialize nested lists of Appliance objects
+		List<List<Appliance>> appliancesList = new ArrayList<>();
 		
+		// Sub-class lists
+		List<Refrigerator> refrigerators = new ArrayList<>();
+		List<Microwave> microwaves = new ArrayList<>();
+		List<Vacuum> vacuums = new ArrayList<>();
+		List<Dishwasher> dishwashers = new ArrayList<>();
+		
+		// For each loop and lambda used for sorting data into appropriate list
+		applianceData.forEach(item -> {
+			// TODO
+		});
+		
+		return appliancesList;
 	}
 	
 }
