@@ -170,8 +170,7 @@ public class AppDriver {
 									Integer.parseInt(segments[7]), // Height
 									Integer.parseInt(segments[8]) // Width
 									)
-							);
-					
+							);					
 				}
 				break;
 				
@@ -203,16 +202,85 @@ public class AppDriver {
 			// Microwave
 			case 3:
 				// Validate room with enum
-				String room = segments[7];
-				if (room == "K" || room == "W") {
+				char room = segments[7].charAt(0);
+				if (room == 'K' || room == 'W') {
 					
-					// Convert valid string to enum
+					// Convert valid char to enum
+					Room roomType = Room.setRoomRating(room);
 					
-					
+					// Add to list
+					microwaves.add(
+							new Microwave(
+									Integer.parseInt(segments[0]), // Item Number
+									segments[1], // Brand
+									Integer.parseInt(segments[2]), // Quantity
+									Integer.parseInt(segments[3]), // Wattage
+									segments[4], // Colour
+									Double.parseDouble(segments[5]), // Price
+									Double.parseDouble(segments[6]), // Capacity
+									roomType // Room Rating
+									)
+							);					
 				}
+				break;
 				
+			// First Dishwasher
+			case 4:
+				// Validate sound with enum
+				String sound = segments[7];
+				if (sound == "Qt" || sound == "Qr" || sound == "Qu" || sound == "M") {
+					
+					// Convert valid String to enum
+					Sound soundType = Sound.setSoundRating(sound);
+					
+					// Add to list
+					dishwashers.add(
+							new Dishwasher(
+									Integer.parseInt(segments[0]), // Item Number
+									segments[1], // Brand
+									Integer.parseInt(segments[2]), // Quantity
+									Integer.parseInt(segments[3]), // Wattage
+									segments[4], // Colour
+									Double.parseDouble(segments[5]), // Price
+									segments[6], // Feature
+									soundType // Sound Rating
+									)
+							);
+				}
+				break;
+				
+			// Second Dishwasher
+			case 5:
+				// Validate sound with enum
+				String sound2 = segments[7];
+				if (sound2 == "Qt" || sound2 == "Qr" || sound2 == "Qu" || sound2 == "M") {
+					
+					// Convert valid String to enum
+					Sound soundType2 = Sound.setSoundRating(sound2);
+					
+					// Add to list
+					dishwashers.add(
+							new Dishwasher(
+									Integer.parseInt(segments[0]), // Item Number
+									segments[1], // Brand
+									Integer.parseInt(segments[2]), // Quantity
+									Integer.parseInt(segments[3]), // Wattage
+									segments[4], // Colour
+									Double.parseDouble(segments[5]), // Price
+									segments[6], // Feature
+									soundType2 // Sound Rating
+									)
+							);
+				}
+				break;
 			}
 		});
+		
+		// Add subclass lists to nested Appliance list
+		appliancesList.add(new ArrayList<Appliance>(refrigerators));
+		appliancesList.add(new ArrayList<Appliance>(microwaves));
+		appliancesList.add(new ArrayList<Appliance>(vacuums));
+		appliancesList.add(new ArrayList<Appliance>(dishwashers));
 		
 		return appliancesList;
 	}
