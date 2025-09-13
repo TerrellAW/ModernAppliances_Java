@@ -10,11 +10,12 @@ import java.util.List;
 import java.util.Scanner;
 
 import modernappliances.application.appliance.*;
+import modernappliances.application.enumerator.*;
 
 /**
  * Main driver class of the program. Contains the entry point.
  * @author mr-bones
- * @version 11-09-2025
+ * @version 13-09-2025
  */
 public class AppDriver {
 	
@@ -120,7 +121,7 @@ public class AppDriver {
 	/**
 	 * This method parses the list of strings from ReadData() into a list of Appliance objects.
 	 * @author mr-bones
-	 * @version 11-09-2025
+	 * @version 13-09-2025
 	 * @return nested generic collection of Appliance objects
 	 */
 	private static List<List<Appliance>> ParseApplianceData(List<String> applianceData) {
@@ -135,7 +136,82 @@ public class AppDriver {
 		
 		// For each loop and lambda used for sorting data into appropriate list
 		applianceData.forEach(item -> {
-			// TODO
+			// Split each appliance string into an array of appliance attributes
+			String[] segments = item.split(";");
+			
+			// Identify appliance type using first number of ID
+			char applianceType = segments[0].charAt(0);
+			
+			// Convert char to int
+			int applianceTypeInt = Character.getNumericValue(applianceType);
+			
+			// Create appliance objects based on type
+			switch (applianceTypeInt) {
+				
+			// Refrigerator
+			case 1:
+				// Validate doors with enum
+				int doors = Integer.parseInt(segments[6]);
+				if (doors == 2 || doors == 3 || doors == 4) {
+					
+					// Convert valid int to enum
+					Door doorAmount = Door.setDoorCount(doors);
+					
+					// Add to list
+					refrigerators.add(
+							new Refrigerator(
+									Integer.parseInt(segments[0]), // Item Number
+									segments[1], // Brand
+									Integer.parseInt(segments[2]), // Quantity
+									Integer.parseInt(segments[3]), // Wattage
+									segments[4], // Colour
+									Double.parseDouble(segments[5]), // Price
+									doorAmount, // Door Amount
+									Integer.parseInt(segments[7]), // Height
+									Integer.parseInt(segments[8]) // Width
+									)
+							);
+					
+				}
+				break;
+				
+			// Vacuum
+			case 2:
+				// Validate voltage with enum
+				int voltage = Integer.parseInt(segments[7]);
+				if (voltage == 18 || voltage == 21) {
+					
+					// Convert valid int to enum
+					Voltage voltAmount = Voltage.setVoltageNum(voltage);
+					
+					// Add to list
+					vacuums.add(
+							new Vacuum(
+									Integer.parseInt(segments[0]), // Item Number
+									segments[1], // Brand
+									Integer.parseInt(segments[2]), // Quantity
+									Integer.parseInt(segments[3]), // Wattage
+									segments[4], // Colour
+									Double.parseDouble(segments[5]), // Price
+									segments[6], // Grade
+									voltAmount // Voltage
+									)
+							);
+				}
+				break;
+				
+			// Microwave
+			case 3:
+				// Validate room with enum
+				String room = segments[7];
+				if (room == "K" || room == "W") {
+					
+					// Convert valid string to enum
+					
+					
+				}
+				
+			}
 		});
 		
 		return appliancesList;

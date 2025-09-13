@@ -38,6 +38,6 @@ public enum Voltage {
 				return voltage;
 			}
 		}
-		throw new IllegalArgumentException("No door type with " + volNum + " doors");
+		throw new IllegalArgumentException("No voltage type with " + volNum + " volts");
 	}
 }
