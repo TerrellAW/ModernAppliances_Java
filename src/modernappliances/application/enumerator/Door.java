@@ -3,7 +3,7 @@ package modernappliances.application.enumerator;
 /**
  * Enumerates the valid number of doors in key value pairs for the Refrigerator class
  * @author mr-bones
- * @version 09-09-2025
+ * @version 13-09-2025
  */
 public enum Door {
 	// Values
