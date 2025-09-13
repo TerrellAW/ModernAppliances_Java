@@ -11,7 +11,7 @@ public enum Voltage {
 	TWENTY_FOUR(24);
 	
 	// Attributes
-	private int num;
+	private final int num;
 	
 	// Getter
 	public int getNum() {
