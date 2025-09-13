@@ -25,6 +25,14 @@ public enum Door {
 	}
 	
 	// Methods
+	/**
+	 * Takes an integer and matches it to an enum value. If it matches one of the values it is converted to an enum.
+	 * Otherwise it returns an error.
+	 * @author mr-bones
+	 * @version 13-09-2025
+	 * @param count
+	 * @return valid door enum
+	 */
 	public static Door setDoorCount(int count) {
 		for (Door door : values()) {
 			if (door.num == count) {
