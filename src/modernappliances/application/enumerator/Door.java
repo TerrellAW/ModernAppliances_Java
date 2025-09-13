@@ -14,7 +14,7 @@ public enum Door {
 	// Attributes
 	private final int num;
 	
-	// Getters and Setters
+	// Getter
 	public int getNum() {
 		return num;
 	}
