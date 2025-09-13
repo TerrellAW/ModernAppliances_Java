@@ -12,19 +12,25 @@ public enum Door {
 	FOUR(4);
 	
 	// Attributes
-	private int num;
+	private final int num;
 	
 	// Getters and Setters
 	public int getNum() {
 		return num;
 	}
 
-	public void setNum(int num) {
-		this.num = num;
-	}
-
 	// Constructor
 	private Door(int num) {
-		this.setNum(num);
+		this.num = num;
+	}
+	
+	// Methods
+	public static Door setDoorCount(int count) {
+		for (Door door : values()) {
+			if (door.num == count) {
+				return door;
+			}
+		}
+		throw new IllegalArgumentException("No door type with " + count + " doors");
 	}
 }
