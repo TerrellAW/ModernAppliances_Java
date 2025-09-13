@@ -7,23 +7,14 @@ package modernappliances.application.enumerator;
  */
 public enum Door {
 	// Values
-	TWO("Two", 2),
-	THREE("Three", 3),
-	FOUR("Four", 4);
+	TWO(2),
+	THREE(3),
+	FOUR(4);
 	
 	// Attributes
-	private String numStr;
 	private int num;
 	
 	// Getters and Setters
-	public String getNumStr() {
-		return numStr;
-	}
-
-	public void setNumStr(String numStr) {
-		this.numStr = numStr;
-	}
-
 	public int getNum() {
 		return num;
 	}
@@ -33,8 +24,7 @@ public enum Door {
 	}
 
 	// Constructor
-	private Door(String numStr, int num) {
-		this.setNumStr(numStr);
+	private Door(int num) {
 		this.setNum(num);
 	}
 }

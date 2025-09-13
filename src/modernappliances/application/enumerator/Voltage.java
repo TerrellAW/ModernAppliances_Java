@@ -7,22 +7,13 @@ package modernappliances.application.enumerator;
  */
 public enum Voltage {
 	// Values
-	EIGHTEEN("Eighteen", 18),
-	TWENTY_FOUR("Twenty Four", 24);
+	EIGHTEEN(18),
+	TWENTY_FOUR(24);
 	
 	// Attributes
-	private String numStr;
 	private int num;
 	
 	// Getters and Setters
-	public String getNumStr() {
-		return numStr;
-	}
-
-	public void setNumStr(String numStr) {
-		this.numStr = numStr;
-	}
-
 	public int getNum() {
 		return num;
 	}
@@ -32,8 +23,7 @@ public enum Voltage {
 	}
 	
 	// Constructor
-	private Voltage(String numStr, int num) {
-		this.setNumStr(numStr);
+	private Voltage(int num) {
 		this.setNum(num);
 	}
 }
