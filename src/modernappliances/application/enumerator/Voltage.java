@@ -3,7 +3,7 @@ package modernappliances.application.enumerator;
 /**
  * Enumerates the valid battery voltages in key value pairs for the Vacuum class
  * @author mr-bones
- * @version 09-09-2025
+ * @version 13-09-2025
  */
 public enum Voltage {
 	// Values
@@ -13,17 +13,31 @@ public enum Voltage {
 	// Attributes
 	private int num;
 	
-	// Getters and Setters
+	// Getter
 	public int getNum() {
 		return num;
-	}
-
-	public void setNum(int num) {
-		this.num = num;
 	}
 	
 	// Constructor
 	private Voltage(int num) {
-		this.setNum(num);
+		this.num = num;
+	}
+	
+	// Methods
+	/**
+	 * Takes an integer and matches it to an enum value. If it matches one of the values it is converted to an enum.
+	 * Otherwise it returns an error.
+	 * @author mr-bones
+	 * @version 13-09-2025
+	 * @param volNum
+	 * @return valid voltage enum
+	 */
+	public static Voltage setVoltageNum(int volNum) {
+		for (Voltage voltage : values()) {
+			if (voltage.num == volNum) {
+				return voltage;
+			}
+		}
+		throw new IllegalArgumentException("No door type with " + volNum + " doors");
 	}
 }
