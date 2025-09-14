@@ -1,9 +1,7 @@
 package modernappliances.application;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +16,8 @@ import modernappliances.application.enumerator.*;
  * @version 13-09-2025
  */
 public class AppDriver {
+	// Initialize scanner for user input
+	private static Scanner input = new Scanner(System.in);
 	
 	/**
 	 * Main entry point of program. Calls all the functions needed for program features.
@@ -32,9 +32,6 @@ public class AppDriver {
 		// Load and parse data
 		List<String> applianceData = ReadData();
 		List<List<Appliance>> appliances = ParseApplianceData(applianceData);
-		
-		// Initialize scanner for user input
-		Scanner input = new Scanner(System.in);
 		
 		// Main menu
 		/**
@@ -101,19 +98,7 @@ public class AppDriver {
 		List<String> rawData = new ArrayList<>();
 		
 		// Find and open resource
-		try (InputStream inputStream = AppDriver.class.getResourceAsStream(filePath);
-			 BufferedReader reader = new BufferedReader(
-		     new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
-			
-			String line;
-			while ((line = reader.readLine()) != null) {
-				rawData.add(line); // Add each line to list of lines
-			}
-			
-		} catch (IOException e) {
-			// Auto-generated error handler
-			e.printStackTrace();
-		}
+		
 		
 		return rawData;
 	}
