@@ -55,17 +55,20 @@ public class AppDriver {
 			// Input validation
 			switch (option) {
 			case "1":
-				
+				purchaseAppliance(appliances);
 				break;
 			case "2":
+				searchAppliancesBrand(appliances);
 				break;
 			case "3":
+				displayAppliancesType(appliances);
 				break;
 			case "4":
+				generateRandomList(appliances);
 				break;
 			case "5":
 				// Save data
-				
+				storeData(appliances);
 				// End main program loop
 				running = false;
 				break;
@@ -81,7 +84,7 @@ public class AppDriver {
 		input.close();
 		return;
 	}
-	
+
 	/**
 	 * Method for reading data from the appliances.txt resource file.
 	 * Will read line by line and add these lines as strings to a list of strings.
@@ -274,6 +277,51 @@ public class AppDriver {
 		appliancesList.add(new ArrayList<Appliance>(dishwashers));
 		
 		return appliancesList;
+	}
+	
+	/**
+	 * 
+	 * @param appliances
+	 */
+	private static void purchaseAppliance(List<List<Appliance>> appliances) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	/**
+	 * 
+	 * @param appliances
+	 */
+	private static void searchAppliancesBrand(List<List<Appliance>> appliances) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * 
+	 * @param appliances
+	 */
+	private static void displayAppliancesType(List<List<Appliance>> appliances) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * 
+	 * @param appliances
+	 */
+	private static void generateRandomList(List<List<Appliance>> appliances) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * 
+	 * @param appliances
+	 */
+	private static void storeData(List<List<Appliance>> appliances) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
