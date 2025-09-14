@@ -29,8 +29,8 @@ public class AppDriver {
 		// Initialization
 		boolean running = true;
 		// Load and parse data
-		List<String> applianceData = ReadData();
-		List<List<Appliance>> appliances = ParseApplianceData(applianceData);
+		List<String> applianceData = readData();
+		List<List<Appliance>> appliances = parseApplianceData(applianceData);
 		
 		// Main menu
 		/**
@@ -55,6 +55,7 @@ public class AppDriver {
 			// Input validation
 			switch (option) {
 			case "1":
+				
 				break;
 			case "2":
 				break;
@@ -89,7 +90,7 @@ public class AppDriver {
 	 * @version 11-09-2025
 	 * @return list of strings, each string is one appliance
 	 */
-	private static List<String> ReadData() {
+	private static List<String> readData() {
 		// Relative file path
 		String filePath = "/res/appliances.txt";
 		
@@ -114,7 +115,7 @@ public class AppDriver {
 	 * @version 13-09-2025
 	 * @return nested generic collection of Appliance objects
 	 */
-	private static List<List<Appliance>> ParseApplianceData(List<String> applianceData) {
+	private static List<List<Appliance>> parseApplianceData(List<String> applianceData) {
 		// Initialize nested lists of Appliance objects
 		List<List<Appliance>> appliancesList = new ArrayList<>();
 		
