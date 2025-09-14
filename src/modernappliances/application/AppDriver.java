@@ -2,7 +2,6 @@ package modernappliances.application;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -98,7 +97,13 @@ public class AppDriver {
 		List<String> rawData = new ArrayList<>();
 		
 		// Find and open resource
-		
+		try (Scanner scanner = new Scanner(new File(filePath))) {
+			while (scanner.hasNextLine()) {
+				rawData.add(scanner.nextLine());
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 		
 		return rawData;
 	}
