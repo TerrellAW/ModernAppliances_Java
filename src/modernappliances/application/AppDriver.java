@@ -95,7 +95,7 @@ public class AppDriver {
 	 */
 	private static List<String> readData() {
 		// Relative file path
-		String filePath = "/res/appliances.txt";
+		String filePath = "res/appliances.txt";
 		
 		// Initialize data list
 		List<String> rawData = new ArrayList<>();
