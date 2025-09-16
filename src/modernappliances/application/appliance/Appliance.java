@@ -3,7 +3,7 @@ package modernappliances.application.appliance;
 /**
  * Abstract Appliance super-class that is extended by the specific appliance types of Modern Appliances.
  * @author mr-bones
- * @version 09-09-2025
+ * @version 16-09-2025
  */
 public abstract class Appliance {
 	
@@ -87,6 +87,20 @@ public abstract class Appliance {
 	public String toString() {
 		return "Item Number: " + getItemNumber() + "Brand: " + getBrand() + "Quantity: " + getQuantity() 
 				+ "Wattage: " + getWattage() + "Colour: " + getColor() + "Price: " + getPrice();
+	}
+	
+	/**
+	 * Decreases quantity of appliance if it would not result in a number smaller than 0.
+	 * @author mr-bones
+	 * @version 16-09-2025
+	 * @param amount
+	 */
+	public void decreaseQuantity(int amount) {
+		if (getQuantity() >= amount) {	
+			setQuantity(-amount);
+		} else {
+			System.out.println("Not enough Appliances for purchase.");
+		}
 	}
 	
 }
