@@ -365,12 +365,34 @@ public class AppDriver {
 	}
 	
 	/**
-	 * 
+	 * Searches for Appliances of a given brand name and displays a list of them.
+	 * @author mr-bones
+	 * @version 16-09-2025
 	 * @param appliances
 	 */
-	private static void searchAppliancesBrand(List<List<Appliance>> appliances) {
-		// TODO Auto-generated method stub
+	private static void searchAppliancesBrand(List<List<Appliance>> appliancesList) {
+		// Non case-sensitive search system
+		System.out.println("Enter the brand: ");
+		String brand = input.nextLine().toLowerCase();
 		
+		List<Appliance> brandAppliances = new ArrayList<>();
+		
+		for (List<Appliance> appliances : appliancesList) {
+			for (Appliance appliance : appliances) {
+				if (appliance.getBrand().toLowerCase() == brand) {
+					brandAppliances.add(appliance);
+				}
+			}
+		}
+		
+		if (brandAppliances.size() > 0) {
+			System.out.println("Brand Appliances: ");
+			for (Appliance appliance : brandAppliances) {
+				System.out.println(appliance.toString());
+			}
+		} else {
+			System.out.println("No Appliances found.");
+		}
 	}
 
 	/**
