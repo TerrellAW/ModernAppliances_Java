@@ -335,7 +335,12 @@ public class AppDriver {
 	}
 	
 	/**
-	 * 
+	 * Simulates purchasing an appliance by decreasing its quantity.
+	 * If there are 0 appliances it will warn the user that appliances are out of stock and not decrease quantity.
+	 * If there are less appliances than the amount the user purchases, decreaseQuantity() will notify
+	 * the user that there are not enough appliances and not decrease quantity.
+	 * @author mr-bones
+	 * @version 16-09-2025
 	 * @param appliances
 	 */
 	private static void purchaseAppliance(List<List<Appliance>> appliancesList) {
