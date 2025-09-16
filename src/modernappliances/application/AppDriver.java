@@ -317,7 +317,7 @@ public class AppDriver {
 	 * @param appliancesList
 	 * @return Appliance object or null
 	 */
-	private static Appliance searchApplianceByNumber(List<List<Appliance>> appliancesList) {
+	private static Appliance searchApplianceNumber(List<List<Appliance>> appliancesList) {
 		// Initialize variable
 		int inputNum = getUserInput();
 		
@@ -338,9 +338,25 @@ public class AppDriver {
 	 * 
 	 * @param appliances
 	 */
-	private static void purchaseAppliance(List<List<Appliance>> appliances) {
-		// TODO Auto-generated method stub
+	private static void purchaseAppliance(List<List<Appliance>> appliancesList) {
+		// Initialize variable
+		Appliance appliance = null;
 		
+		while (appliance == null) {
+			// Use search method
+			appliance = searchApplianceNumber(appliancesList);
+			
+			// Check availability
+			if (appliance != null && appliance.getQuantity() > 0) {
+				System.out.println("How many would you like to purchase: ");
+				int purchaseAmount = getUserInput();
+				
+				// Decrase amount of available appliances
+				appliance.decreaseQuantity(purchaseAmount);
+			} else {
+				System.out.println("Appliance out of stock.");
+			}
+		}
 	}
 	
 	/**
