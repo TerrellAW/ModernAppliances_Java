@@ -12,7 +12,7 @@ import modernappliances.application.enumerator.*;
 /**
  * Main driver class of the program. Contains the entry point.
  * @author mr-bones
- * @version 13-09-2025
+ * @version 16-09-2025
  */
 public class AppDriver {
 	// Initialize scanner for user input
@@ -92,6 +92,7 @@ public class AppDriver {
 	 * @author mr-bones
 	 * @version 11-09-2025
 	 * @return list of strings, each string is one appliance
+	 * @exception FileNotFoundException
 	 */
 	private static List<String> readData() {
 		// Relative file path
@@ -282,8 +283,12 @@ public class AppDriver {
 	// Appliance purchasing system methods
 	
 	/**
-	 * 
+	 * Method that gets user input and converts it into an integer. 
+	 * It catches number format exceptions to prevent crashing the application.
+	 * @author mr-bones
+	 * @version 16-09-2025
 	 * @return inputNum from user inputted string
+	 * @exception NumberFormatException
 	 */
 	private static int GetUserInput() {
 		// Initialize variables
