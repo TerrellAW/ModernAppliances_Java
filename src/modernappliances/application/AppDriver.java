@@ -279,6 +279,32 @@ public class AppDriver {
 		return appliancesList;
 	}
 	
+	// Appliance purchasing system methods
+	
+	/**
+	 * 
+	 * @return inputNum from user inputted string
+	 */
+	private static int GetUserInput() {
+		// Initialize variables
+		boolean exception = true;
+		int inputNum = 0;
+		
+		// Get user input for appliance number
+		System.out.println("Enter the appliance number: ");
+		while (exception == true) {
+			// Catch invalid inputs
+			try {
+				inputNum = Integer.parseInt(input.nextLine());
+				exception = false;
+			} catch (NumberFormatException e) {
+				System.out.println("Invalid output. Please enter a number.");
+			}
+		}
+		
+		return inputNum;
+	}
+	
 	/**
 	 * 
 	 * @param appliances
