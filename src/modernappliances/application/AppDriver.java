@@ -290,7 +290,7 @@ public class AppDriver {
 	 * @return inputNum from user inputted string
 	 * @exception NumberFormatException
 	 */
-	private static int GetUserInput() {
+	private static int getUserInput() {
 		// Initialize variables
 		boolean exception = true;
 		int inputNum = 0;
@@ -308,6 +308,30 @@ public class AppDriver {
 		}
 		
 		return inputNum;
+	}
+	
+	/**
+	 * Searches through the nested collection of Appliances using the appliance's item number.
+	 * @author mr-bones
+	 * @version 16-09-2025
+	 * @param appliancesList
+	 * @return Appliance object or null
+	 */
+	private static Appliance searchApplianceByNumber(List<List<Appliance>> appliancesList) {
+		// Initialize variable
+		int inputNum = getUserInput();
+		
+		// Find appliance number
+		for (List<Appliance> appliances : appliancesList) {
+			for (Appliance appliance : appliances) {
+				if (appliance.getItemNumber() == inputNum) {
+					return appliance;
+				}
+			}
+		}
+		
+		System.out.println("Appliance not found.");
+		return null;
 	}
 	
 	/**
