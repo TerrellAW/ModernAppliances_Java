@@ -97,7 +97,7 @@ public abstract class Appliance {
 	 */
 	public void decreaseQuantity(int amount) {
 		if (getQuantity() >= amount) {	
-			setQuantity(-amount);
+			setQuantity(getQuantity() - amount);
 		} else {
 			System.out.println("Not enough Appliances for purchase.");
 		}
