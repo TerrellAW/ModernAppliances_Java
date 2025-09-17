@@ -2,6 +2,9 @@ package modernappliances.application;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -108,6 +111,7 @@ public class AppDriver {
 				rawData.add(scanner.nextLine());
 			}
 		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 		
@@ -471,12 +475,107 @@ public class AppDriver {
 	}
 
 	/**
-	 * 
+	 * Adds data stored in appliancesList to the appliances.txt file for storage.
+	 * @author mr-bones
+	 * @version 16-09-2025
 	 * @param appliancesList
 	 */
 	private static void storeData(List<List<Appliance>> appliancesList) {
-		// TODO Auto-generated method stub
+		// Relative file path
+		String filePath = "res/appliances.txt";
 		
+		// Find and open resource
+		try (PrintWriter writer = new PrintWriter(new FileWriter(filePath))) {
+			for (List<Appliance> appliances : appliancesList) {
+				for (Appliance appliance : appliances) {
+					if (appliance instanceof Refrigerator) {
+						Refrigerator refrigerator = (Refrigerator) appliance;
+						writer.println(
+								refrigerator.getItemNumber() 
+								+ ";" 
+								+ refrigerator.getBrand() 
+								+ ";" 
+								+ refrigerator.getQuantity()
+								+ ";"
+								+ refrigerator.getWattage()
+								+ ";"
+								+ refrigerator.getColor()
+								+ ";"
+								+ refrigerator.getPrice()
+								+ ";"
+								+ refrigerator.getDoorAmount()
+								+ ";"
+								+ refrigerator.getHeight()
+								+ ";"
+								+ refrigerator.getWidth()
+								+ ";");
+					}
+					else if (appliance instanceof Vacuum) {
+						Vacuum vacuum = (Vacuum) appliance;
+						writer.println(
+								vacuum.getItemNumber() 
+								+ ";" 
+								+ vacuum.getBrand() 
+								+ ";" 
+								+ vacuum.getQuantity()
+								+ ";"
+								+ vacuum.getWattage()
+								+ ";"
+								+ vacuum.getColor()
+								+ ";"
+								+ vacuum.getPrice()
+								+ ";"
+								+ vacuum.getGrade()
+								+ ";"
+								+ vacuum.getVoltage()
+								+ ";");
+					}
+					else if (appliance instanceof Microwave) {
+						Microwave microwave = (Microwave) appliance;
+						writer.println(
+								microwave.getItemNumber() 
+								+ ";" 
+								+ microwave.getBrand() 
+								+ ";" 
+								+ microwave.getQuantity()
+								+ ";"
+								+ microwave.getWattage()
+								+ ";"
+								+ microwave.getColor()
+								+ ";"
+								+ microwave.getPrice()
+								+ ";"
+								+ microwave.getCapacity()
+								+ ";"
+								+ microwave.getRoomType()
+								+ ";");
+					}
+					else if (appliance instanceof Dishwasher) {
+						Dishwasher dishwasher = (Dishwasher) appliance;
+						writer.println(
+								dishwasher.getItemNumber() 
+								+ ";" 
+								+ dishwasher.getBrand() 
+								+ ";" 
+								+ dishwasher.getQuantity()
+								+ ";"
+								+ dishwasher.getWattage()
+								+ ";"
+								+ dishwasher.getColor()
+								+ ";"
+								+ dishwasher.getPrice()
+								+ ";"
+								+ dishwasher.getFeature()
+								+ ";"
+								+ dishwasher.getSoundRating()
+								+ ";");
+					}
+				}
+			}
+			System.out.println("Data stored successfully.");
+		} catch (IOException e) {
+			System.out.println("Error in storing data: " + e.getMessage());
+		}
 	}
 	
 }
