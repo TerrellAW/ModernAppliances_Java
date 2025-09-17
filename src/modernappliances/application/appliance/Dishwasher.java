@@ -5,7 +5,7 @@ import modernappliances.application.enumerator.Sound;
 /**
  * Dishwasher class extends Appliance and implements its own unique attributes and methods.
  * @author mr-bones
- * @version 09-09-2025
+ * @version 16-09-2025
  */
 public class Dishwasher extends Appliance {
 	
@@ -42,7 +42,7 @@ public class Dishwasher extends Appliance {
 	 * Returns a string with all the appliance's attributes.
 	 * Concatenates to the Appliance super-class' implementation, which it overrides.
 	 * @author mr-bones
-	 * @version 09-09-2025
+	 * @version 16-09-2025
 	 * @return formatted string with appliance attributes
 	 */
 	@Override

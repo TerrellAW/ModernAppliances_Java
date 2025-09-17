@@ -3,7 +3,7 @@ package modernappliances.application.enumerator;
 /**
  * Enumerates the valid sound ratings for the Dishwasher class
  * @author mr-bones
- * @version 13-09-2025
+ * @version 16-09-2025
  */
 public enum Sound {
 	// Values
@@ -30,7 +30,7 @@ public enum Sound {
 	 * Takes a string and matches it to an enum value. If it matches one of the values it is converted to an enum.
 	 * Otherwise it returns an error.
 	 * @author mr-bones
-	 * @version 13-09-2025
+	 * @version 16-09-2025
 	 * @param soundStr
 	 * @return valid sound enum
 	 */
