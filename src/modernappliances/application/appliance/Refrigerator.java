@@ -15,8 +15,8 @@ public class Refrigerator extends Appliance {
 	private int width;
 	
 	// Getters and Setters
-	public Door getDoorAmount() {
-		return doorAmount;
+	public int getDoorAmount() {
+		return doorAmount.getNum();
 	}
 
 	public void setDoorAmount(Door doorAmount) {

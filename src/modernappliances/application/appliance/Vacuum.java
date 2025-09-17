@@ -22,8 +22,8 @@ public class Vacuum extends Appliance {
 		this.grade = grade;
 	}
 
-	public Voltage getVoltage() {
-		return voltage;
+	public int getVoltage() {
+		return voltage.getNum();
 	}
 
 	public void setVoltage(Voltage voltage) {
