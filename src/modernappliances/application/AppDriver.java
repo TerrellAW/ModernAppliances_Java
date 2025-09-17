@@ -228,7 +228,7 @@ public class AppDriver {
 			case 4:
 				// Validate sound with enum
 				String sound = segments[7];
-				if (sound == "Qt" || sound == "Qr" || sound == "Qu" || sound == "M") {
+				if (sound.equals("Qt") || sound.equals("Qr") || sound.equals("Qu") || sound.equals("M")) {
 					
 					// Convert valid String to enum
 					Sound soundType = Sound.setSoundRating(sound);
@@ -253,7 +253,7 @@ public class AppDriver {
 			case 5:
 				// Validate sound with enum
 				String sound2 = segments[7];
-				if (sound2 == "Qt" || sound2 == "Qr" || sound2 == "Qu" || sound2 == "M") {
+				if (sound2.equals("Qt") || sound2.equals("Qr") || sound2.equals("Qu") || sound2.equals("M")) {
 					
 					// Convert valid String to enum
 					Sound soundType2 = Sound.setSoundRating(sound2);
@@ -423,10 +423,10 @@ public class AppDriver {
 			chosenAppliances = appliancesList.get(0);
 			break;
 		case "2":
-			chosenAppliances = appliancesList.get(1);
+			chosenAppliances = appliancesList.get(2);
 			break;
 		case "3":
-			chosenAppliances = appliancesList.get(2);
+			chosenAppliances = appliancesList.get(1);
 			break;
 		case "4":
 			chosenAppliances = appliancesList.get(3);
