@@ -47,7 +47,7 @@ public class Dishwasher extends Appliance {
 	 */
 	@Override
 	public String toString() {
-		return super.toString() + "Feature: " + getFeature() + "Sound Rating: " + getSoundRating();
+		return super.toString() + " Feature: " + getFeature() + " Sound Rating: " + getSoundRating();
 	}
 	
 }

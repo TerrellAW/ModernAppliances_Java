@@ -85,8 +85,8 @@ public abstract class Appliance {
 	 */
 	@Override
 	public String toString() {
-		return "Item Number: " + getItemNumber() + "Brand: " + getBrand() + "Quantity: " + getQuantity() 
-				+ "Wattage: " + getWattage() + "Colour: " + getColor() + "Price: " + getPrice();
+		return "Item Number: " + getItemNumber() + " Brand: " + getBrand() + " Quantity: " + getQuantity() 
+				+ " Wattage: " + getWattage() + " Colour: " + getColor() + " Price: " + getPrice();
 	}
 	
 	/**

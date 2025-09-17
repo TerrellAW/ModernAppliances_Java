@@ -47,7 +47,7 @@ public class Microwave extends Appliance {
 	 */
 	@Override
 	public String toString() {
-		return super.toString() + "Capacity: " + getCapacity() + "Room Type: " + getRoomType();
+		return super.toString() + " Capacity: " + getCapacity() + " Room Type: " + getRoomType();
 	}
 	
 }

@@ -46,7 +46,7 @@ public class Vacuum extends Appliance {
 	 */
 	@Override
 	public String toString() {
-		return super.toString() + "Grade: " + getGrade() + "Voltage: " + getVoltage();
+		return super.toString() + " Grade: " + getGrade() + " Voltage: " + getVoltage();
 	}
 	
 }

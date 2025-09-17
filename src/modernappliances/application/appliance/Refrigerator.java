@@ -56,7 +56,7 @@ public class Refrigerator extends Appliance {
 	 */
 	@Override
 	public String toString() {
-		return super.toString() + "Number of doors: " + getDoorAmount() + "Height: " + getHeight() + "Width: " + getWidth();
+		return super.toString() + " Number of doors: " + getDoorAmount() + " Height: " + getHeight() + " Width: " + getWidth();
 	}
 	
 }
