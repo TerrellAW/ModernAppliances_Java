@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Random;
 
 import modernappliances.application.appliance.*;
 import modernappliances.application.enumerator.*;
@@ -341,7 +342,7 @@ public class AppDriver {
 	 * the user that there are not enough appliances and not decrease quantity.
 	 * @author mr-bones
 	 * @version 16-09-2025
-	 * @param appliances
+	 * @param appliancesList
 	 */
 	private static void purchaseAppliance(List<List<Appliance>> appliancesList) {
 		// Initialize variable
@@ -368,7 +369,7 @@ public class AppDriver {
 	 * Searches for Appliances of a given brand name and displays a list of them.
 	 * @author mr-bones
 	 * @version 16-09-2025
-	 * @param appliances
+	 * @param appliancesList
 	 */
 	private static void searchAppliancesBrand(List<List<Appliance>> appliancesList) {
 		// Non case-sensitive search system
@@ -396,28 +397,84 @@ public class AppDriver {
 	}
 
 	/**
-	 * 
-	 * @param appliances
+	 * Displays appliances in a list of appliances of the same type.
+	 * Takes user input to choose an appliance type to display.
+	 * @author mr-bones
+	 * @version 16-09-2025
+	 * @param appliancesList
 	 */
-	private static void displayAppliancesType(List<List<Appliance>> appliances) {
-		// TODO Auto-generated method stub
+	private static void displayAppliancesType(List<List<Appliance>> appliancesList) {
+		System.out.println(
+				"Appliances Type\n"
+				+ "1 - Refrigerators\n"
+				+ "2 - Vacuums\n"
+				+ "3 - Microwaves\n"
+				+ "4 - Dishwashers\n"
+				+ "Enter the type of Appliance: ");
+		String type = input.nextLine();
 		
+		List<Appliance> chosenAppliances = new ArrayList<>();
+		switch (type) {
+		case "1":
+			chosenAppliances = appliancesList.get(0);
+			break;
+		case "2":
+			chosenAppliances = appliancesList.get(1);
+			break;
+		case "3":
+			chosenAppliances = appliancesList.get(2);
+			break;
+		case "4":
+			chosenAppliances = appliancesList.get(3);
+			break;
+		default:
+			System.out.println("Invalid option. Try again.");
+			return;
+		}
+		for (Appliance appliance : chosenAppliances) {
+			System.out.println(appliance.toString());
+		}
+	}
+
+	/**
+	 * Chooses the given amount of random appliances to display in a list.
+	 * Takes user input to determine amount of appliances to add to list.
+	 * @author mr-bones
+	 * @version 16-09-2025
+	 * @param appliancesList
+	 */
+	private static void generateRandomList(List<List<Appliance>> appliancesList) {
+		// Take user input
+		System.out.println("Enter number of appliances: ");
+		int num = Integer.parseInt(input.nextLine());
+		
+		// Initialize objects
+		Random random = new Random();
+		List<Appliance> chosenAppliances = new ArrayList<>();
+		System.out.println("Random Appliances: ");
+		
+		while (chosenAppliances.size() < num) {
+			// Select random sublist index
+			int listI = random.nextInt(appliancesList.size());
+			List<Appliance> sublist = appliancesList.get(listI);
+			
+			// Select random appliance from the sublist
+			int applianceI = random.nextInt(sublist.size());
+			Appliance randomAppliance = sublist.get(applianceI);
+			
+			// Add to list
+			if (!chosenAppliances.contains(randomAppliance)) {
+				chosenAppliances.add(randomAppliance);
+				System.out.println("Item Number: " + randomAppliance.getItemNumber() + ", Brand: " + randomAppliance.getBrand());
+			}
+		}
 	}
 
 	/**
 	 * 
-	 * @param appliances
+	 * @param appliancesList
 	 */
-	private static void generateRandomList(List<List<Appliance>> appliances) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/**
-	 * 
-	 * @param appliances
-	 */
-	private static void storeData(List<List<Appliance>> appliances) {
+	private static void storeData(List<List<Appliance>> appliancesList) {
 		// TODO Auto-generated method stub
 		
 	}
