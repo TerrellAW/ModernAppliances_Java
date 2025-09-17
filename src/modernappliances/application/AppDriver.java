@@ -384,13 +384,13 @@ public class AppDriver {
 		
 		for (List<Appliance> appliances : appliancesList) {
 			for (Appliance appliance : appliances) {
-				if (appliance.getBrand().toLowerCase() == brand) {
+				if (appliance.getBrand().toLowerCase().equals(brand)) {
 					brandAppliances.add(appliance);
 				}
 			}
 		}
 		
-		if (brandAppliances.size() > 0) {
+		if (!brandAppliances.isEmpty()) {
 			System.out.println("Brand Appliances: ");
 			for (Appliance appliance : brandAppliances) {
 				System.out.println(appliance.toString());
