@@ -36,7 +36,7 @@ public enum Sound {
 	 */
 	public static Sound setSoundRating(String soundStr) {
 		for (Sound sound : values()) {
-			if (sound.soundRating == soundStr) {
+			if (sound.soundRating.equals(soundStr)) {
 				return sound;
 			}
 		}
